@@ -1,4 +1,4 @@
-# Intro to Gihub Actions
+# Intro to Github Actions
 A dummy repository to learn how to set up and use Github actions 😄
  
 ### Getting started
