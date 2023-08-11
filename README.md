@@ -47,12 +47,13 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
   
   
   For more details, look at [3] in references
- 
-[Jump to top](#anchor-link)
-
-</details>
+  
+ [**Jump to top**](#anchor-link)
 
 ---
+</details>
+
+
 ## Workflow basics
 Goals:
 - Understand the hierarchy of a workflow
