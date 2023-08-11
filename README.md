@@ -3,10 +3,11 @@ A dummy repository to learn some basic uses of Github actions 😄
  
 <h2 id='anchor-link'> Getting started </h2>
 Github actions is a continuous integration and continuous delivery (C/CD) platforn that allows you to automate your build, test, and deployment pipeline. 
-
+<br>
+<br>
 <details>
 <summary> Theory </summary>
-
+ 
 ### Basic Components
   **Event:** A specfic activity in the repository that triggers a workflow run (eg. creating a pull-request)
   
@@ -51,6 +52,7 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
 
 </details>
 
+---
 ## Workflow basics
 Goals:
 - Understand the hierarchy of a workflow
