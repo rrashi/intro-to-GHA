@@ -1,7 +1,7 @@
 # Intro to Github Actions
 A dummy repository to learn some basic uses of Github actions 😄
  
-<h2 id='anchor-link'> Getting started </h2>
+## Getting started 
 Github actions is a continuous integration and continuous delivery (C/CD) platform that allows you to automate your build, test, and deployment pipeline. 
 <br>
 <br>
@@ -48,7 +48,7 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
   
   For more details, look at [3] in references
   
- [**Jump to top**](#anchor-link)
+ [**Jump to top**](#getting-started)
 
 ---
 </details>
