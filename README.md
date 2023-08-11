@@ -2,7 +2,7 @@
 A dummy repository to learn some basic uses of Github actions 😄
  
 <h2 id='anchor-link'> Getting started </h2>
-Github actions is a continuous integration and continuous delivery (C/CD) platforn that allows you to automate your build, test, and deployment pipeline. 
+Github actions is a continuous integration and continuous delivery (C/CD) platform that allows you to automate your build, test, and deployment pipeline. 
 <br>
 <br>
 <details>
