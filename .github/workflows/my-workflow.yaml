@@ -1,0 +1,19 @@
+# Template workflow for the intro-to-gha repository
+name: Hello World
+on: pull_request
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo "Hello World"
+      - name: Call my reusable action
+        id: my-action
+        uses: ./.github/actions/my-reusable-action
+        with:
+          who-to-greet: "rashi"
+      - name: Echo
+        shell: bash
+        run: |
+          echo "Random number generated is ${{ steps.my-action.outputs.random-number }}"
