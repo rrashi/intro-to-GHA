@@ -1,6 +1,9 @@
 # Template workflow for the intro-to-gha repository
 name: Hello World
-on: workflow_dispatch
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
 jobs:
   hello-world:
     runs-on: ubuntu-latest
