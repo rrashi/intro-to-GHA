@@ -15,7 +15,7 @@ jobs:
       # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it. It's needed for every workflow
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo "This is an exmple"
+        run: echo "This is an example"
       - name: Call my reusable action
         id: my-action
         uses: ./.github/actions/starter-action
