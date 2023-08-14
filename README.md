@@ -78,8 +78,8 @@ Goals:
 - Be able to Pass data between multiple jobs
 
 Tasks:
-1. Add a new step to job A that prints out the COOL_VARIABLE global repo variable 
-2. Add a step that generates a random number and outputs it as a github output
+1. Add a new step to job A that echoes the COOL_VARIABLE global repo variable 
+2. Add another step that generates a random number and saves it as a github output
 6. Add an output to job A that outputs the random number
 7. Create a new job B that takes an input from job A
 8. Echo the input received to job B
