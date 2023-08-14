@@ -33,6 +33,10 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
   <img width="344" alt="Screenshot 2023-08-11 at 1 00 12 PM" src="https://github.com/rrashi/intro-to-GHA/assets/61819683/fbe0be90-e355-4de3-9d6c-5dadacb6cece">
   
   <img width="336" alt="Screenshot 2023-08-11 at 12 58 00 PM" src="https://github.com/rrashi/intro-to-GHA/assets/61819683/2ea74e78-ef76-4b29-9752-c4467f40a752">
+
+  ### Communication between jobs and steps
+
+ Parts of the workflow can communicate and share data. Github allows communication between steps using outputs generated through `$GITHUB_OUTPUT`. You can also use `$GITHUB_ENV` to save outputs and then access them in a later step using `env.{VARIABLE}` Because jobs run on different runners, comunication between them would require the creation of a dependency between the jobs. If job B requires an input from job A, the 2 jobs would have to run sequentially. By default, jobs run in parallel. This order is specified via a `needs` parameter in a dependent job (here, job B). 
   
   ### Composite actions vs workflows
   As mentioned earlier, actions are individual tasks that you can combine to create jobs and customize your workflow. There are pre-existing actions available on [Github Marketplace](https://github.com/marketplace?type=). However, we can also create our own. 
@@ -46,8 +50,9 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
   | Can be conditional      | Can't be controlled conditionally            |           
   
   
-  For more details, look at [3] in references
-  
+For more details, look at [3] in references
+
+
  [**Jump to top**](#getting-started)
 
 ---
@@ -62,9 +67,9 @@ Goals:
 
 Tasks:
 1. Update the starter template workflow to be run on creating a pull request
-2. Create a new job that prints the statement “Hello world”
+2. Create a new job A that prints the statement “Hello world”
 3. Commit and push
-4. Run workflow on Github
+4. Open a PR for your branch and see the workflow run
 
 ## Secrets and Variables 
 Goals:
@@ -73,7 +78,7 @@ Goals:
 - Be able to Pass data between multiple jobs
 
 Tasks:
-1. Add a new step to job A that prints out the COOL_VARIBLE global repo variable 
+1. Add a new step to job A that prints out the COOL_VARIABLE global repo variable 
 2. Add a step that generates a random number and outputs it as a github output
 6. Add an output to job A that outputs the random number
 7. Create a new job B that takes an input from job A
