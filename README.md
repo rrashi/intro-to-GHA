@@ -73,17 +73,22 @@ Goals:
 - Be able to Pass data between multiple jobs
 
 Tasks:
-1. Update the step in job A to save “Hello world” in a variable 
-2. Add a new step that echos the output from step A
-3. Add a new job B
-4. Add an output to job A
-5. Take the output from job A and pass it to job B
+1. Add a new step to job A that prints out the COOL_VARIBLE global repo variable 
+2. Add a step that generates a random number and outputs it as a github output
+6. Add an output to job A that outputs the random number
+7. Create a new job B that takes an input from job A
+8. Echo the input received to job B
 
 ## Composite actions
 Goals:
 1. Understand the difference between a composite action and a workflow
 2. Call pre-defined reusable actions
 3. Define your own composite action and call it within your workflow
+
+Tasks:
+1. Add a new job in the workflow that calls a reusable (here's a [link](https://github.com/marketplace/actions/funny-comments) to an action that puts funny comments on your PR)
+2. Create a new composite action that takes in an input string and echoes hello world
+3. Replace the code in the workflow's job A to call the action instead
 
 ### References 
 [1] Tutorial on YAML: https://learnxinyminutes.com/docs/yaml/
