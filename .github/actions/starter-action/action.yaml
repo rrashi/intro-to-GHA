@@ -3,7 +3,7 @@
 # Each composite action is created using a directory of it's name followed by an action.yaml file containing the metadata for it.
 # The following template represents the basic structure for all actions
 
-name: "Hello World"
+name: "Hello someone..."
 description: "Greet someone"
 # Inputs are passed using a "with" under the step where the action is called
 inputs:
