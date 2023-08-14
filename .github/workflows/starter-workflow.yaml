@@ -3,6 +3,7 @@ name: Hello World
 
 # This specifies triggers for the workflow
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
@@ -13,16 +14,13 @@ jobs:
     steps:
       # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it. It's needed for every workflow
       - uses: actions/checkout@v3
-
       - name: Run a one-line script
         run: echo "This is an exmple"
-
       - name: Call my reusable action
         id: my-action
         uses: ./.github/actions/starter-action
         with:
           who-to-greet: "rashi"
-
       - name: Echo
         shell: bash
         run: |
