@@ -1,21 +1,28 @@
 # Template workflow for the intro-to-gha repository
 name: Hello World
+
+# This specifies triggers for the workflow
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
-  hello-world:
+  # An example job
+  lets-get-started:
     runs-on: ubuntu-latest
     steps:
+      # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it. It's needed for every workflow
       - uses: actions/checkout@v3
+
       - name: Run a one-line script
-        run: echo "Hello World"
+        run: echo "This is an exmple"
+
       - name: Call my reusable action
         id: my-action
-        uses: ./.github/actions/my-reusable-action
+        uses: ./.github/actions/starter-action
         with:
           who-to-greet: "rashi"
+
       - name: Echo
         shell: bash
         run: |
