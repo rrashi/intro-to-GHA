@@ -59,4 +59,4 @@ jobs:
       - name: Echo random number
         shell: bash
         run: |
-          echo "${{ needs.hello-world.outputs.random-number }}""
+          echo "${{ needs.hello-world-plus-cool-variable.outputs.random-number }}""
