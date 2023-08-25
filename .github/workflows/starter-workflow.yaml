@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-liner script
         run: echo "hellow rashi!!!"
+      - name: Echos cool variable
+        run: echo "${{vars.COOL_VARIABLE}}"
   lets-get-started:
     runs-on: ubuntu-latest
     steps:
