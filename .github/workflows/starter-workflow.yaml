@@ -43,3 +43,7 @@ jobs:
         shell: bash
         run: |
           echo "hello world"
+      - name: Echos cool variable
+        shell: bash
+        run: |
+          echo "${{ vars.COOL_VARIABLE }}"
