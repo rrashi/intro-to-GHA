@@ -15,12 +15,18 @@ jobs:
   # An example job
   hello-world:
     runs-on: ubuntu-latest
+    outputs:
+      random-number: ${{steps.random-id.outputs.random-number}}
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-liner script
         run: echo "hellow rashi!!!"
       - name: Echos cool variable
         run: echo "${{vars.COOL_VARIABLE}}"
+      - name: Generate random number
+        id: random-id
+        run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+        shell: bash
   lets-get-started:
     runs-on: ubuntu-latest
     steps:
@@ -39,3 +45,11 @@ jobs:
         shell: bash
         run: |
           echo "Random number generated is ${{ steps.my-action.outputs.random-number }}"
+  print-random-number:
+    runs-on: ubuntu-latest
+    needs: [hello-world]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Echo number
+        shell: bash
+        run: echo "${{needs.hello-world.outputs.random-number}}"
