@@ -24,7 +24,7 @@ Github actions is a continuous integration and continuous delivery (CI/CD) platf
   
   **Actions:** A resuable, custom application that performs tasks required by multiple workflows
   
-  In summary, an *event* triggers a *workflow* which contains multiple *jobs* each of which run on independent servers called *runners*. Jobs are made up of *steps* and may contain calling reusable *actions*.
+  In summary, an *event* triggers a *workflow* which contains multiple *jobs* each of which run on independent VMs called *runners*. Jobs are made up of *steps* and may contain calling reusable *actions*.
   
   ### How it works
   
