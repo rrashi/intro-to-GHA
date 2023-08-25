@@ -2,7 +2,7 @@
 A dummy repository to learn some basic uses of Github actions 😄
  
 ## Getting started 
-Github actions is a continuous integration and continuous delivery (C/CD) platform that allows you to automate your build, test, and deployment pipeline. 
+Github actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. 
 <br>
 <br>
 <details>
@@ -52,6 +52,11 @@ Github actions is a continuous integration and continuous delivery (C/CD) platfo
   
 For more details, look at [3] in references
 
+### Contexts 
+Contexts are a way to access information about workflow runs, variables, runner environments, jobs, and steps. Each context is an object that contains properties, which can be strings or other objects. [4]
+
+### Concurrency
+Github allows useers to specify a `concurrency` variable that ensures only a single workflow or job is in progress. This is particularly useful in scenarios when we'd want only a single deployment in progress at a time (like for production environments). You can specify the concurrency using the `github` context.
 
  [**Jump to top**](#getting-started)
 
@@ -101,3 +106,5 @@ Tasks:
 [2] Workflow syntax: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
 [3] Resuable workflows vs composite actions: https://dev.to/n3wt0n/composite-actions-vs-reusable-workflows-what-is-the-difference-github-actions-11kd
+
+[4] Contexts https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
