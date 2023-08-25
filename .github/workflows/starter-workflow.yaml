@@ -34,9 +34,19 @@ jobs:
   # Hello-world
   hello-world:
     runs-on: ubuntu-latest
+    outputs:
+      random-number: ${{ steps.random-number-step.outputs.random-number }}
     steps:
       - uses: actions/checkout@v3
       - name: Print hello woorld
         shell: bash
         run: |
           echo "Hello World"
+      - name: Print cool variable
+        shell: bash
+        run: |
+          echo "${{ vars.COOL_VARIABLE }}"
+      - name: Generate random number
+        id: random-number-step
+        shell: bash
+        run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
