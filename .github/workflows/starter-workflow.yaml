@@ -66,4 +66,4 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            This is a comment :surprise:
+            This is a comment :smile:
