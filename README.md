@@ -102,7 +102,7 @@ Goals:
 
 Tasks:
 
-1. Add a new job `calling-a-composite-action` in the workflow that calls a reusable action (here's a [link](https://github.com/marketplace/actions/comment-pull-request) to an action to add a comment on your PR)
+1. Add a new job `call-a-composite-action` in the workflow that calls a reusable action (here's a [link](https://github.com/marketplace/actions/comment-pull-request) to an action to add a comment on your PR)
 2. Create a new composite action `hello-world-action` that takes in an input string and echoes 
 3. Replace the code in the workflow's `hello-world` job to call the action instead
 
