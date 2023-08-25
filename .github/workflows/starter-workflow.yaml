@@ -50,7 +50,7 @@ jobs:
         id: random-id
         shell: bash
         run: |
-          echo "random-number=${ echo $RANDOM}" >> GITHUB_OUTPUT
+          echo "random-number=${echo $RANDOM}" >> GITHUB_OUTPUT
 
   print-random-number:
     runs-on: ubuntu-latest
