@@ -20,13 +20,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ${{github.repository}}
-      - name: Run a one-line script
-        run: echo "This is an example"
+      # - name: Run a one-line script
+      #   run: echo "This is an example"
       - name: Call my reusable action
         id: my-action
         uses: ./.github/actions/starter-action
         with:
-          who-to-greet: "beebee"
+          who-to-greet: "Rassshii"
       - name: Echo
         shell: bash
         run: |
