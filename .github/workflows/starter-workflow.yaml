@@ -38,10 +38,8 @@ jobs:
       random-number: ${{ steps.random-number-step.outputs.random-number }}
     steps:
       - uses: actions/checkout@v3
-      - name: Print hello woorld
-        shell: bash
-        run: |
-          echo "Hello World"
+      - name: Call hello world action
+        uses: ./.github/actions/hello-world
       - name: Print cool variable
         shell: bash
         run: |
@@ -50,3 +48,22 @@ jobs:
         id: random-number-step
         shell: bash
         run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+
+  print-random-number:
+    runs-on: ubuntu-latest
+    needs: [hello-world]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print random number
+        shell: bash
+        run: echo "${{needs.hello-world.outputs.random-number}}"
+
+  calling-a-composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            This is a comment :surprise:
