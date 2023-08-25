@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo "Hello world"
+        uses: ./.github/actions/rashi-action
       - name: Echos cool variable
         shell: bash
         run: echo "${{ vars.COOL_VARIABLE }}"
@@ -47,6 +47,8 @@ jobs:
         id: random-id
         run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
         shell: bash
+      - name: give me the output
+        run: echo "${{ steps.random-id.outputs.random-number }}"
 
   print-random-number:
     runs-on: ubuntu-latest
@@ -56,3 +58,15 @@ jobs:
       - name: Echo number
         shell: bash
         run: echo "${{ needs.hello-world.outputs.random-number }}"
+
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: An example job to comment a PR
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            Hello routicians ! :smile:
