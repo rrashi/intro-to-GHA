@@ -4,6 +4,8 @@ name: Hello World
 # This specifies triggers for the workflow
 on:
   workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
 concurrency:
   # This is a fully-formed ref of the branch or tag that triggered the workflow run.
   group: ${{ github.ref }}
@@ -29,3 +31,10 @@ jobs:
         shell: bash
         run: |
           echo "Random number generated is ${{ steps.my-action.outputs.random-number }}"
+
+  hello-world: 
+    runs-on: ubuntu-latest
+    steps: 
+      - users: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo "This is an example"
