@@ -1,0 +1,16 @@
+# Template file for a composite aciton
+
+# Each composite action is created using a directory of it's name followed by an action.yaml file containing the metadata for it.
+# The following template represents the basic structure for all actions
+
+name: 'feed-me'
+description: 'I want fooooood'
+runs:
+  # This using is required for all composite actions
+  using: 'composite'
+  steps:
+    - run: echo Hello Sir William the third.
+      shell: bash
+    # this is important to be able to access the aciton from the workflow
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash

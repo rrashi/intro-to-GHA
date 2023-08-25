@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-liner script
-        run: echo "hellow rashi!!!"
+        uses: ./.github/actions/peters-action
       - name: Echos cool variable
         run: echo "${{vars.COOL_VARIABLE}}"
       - name: Generate random number
