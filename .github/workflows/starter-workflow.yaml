@@ -24,7 +24,7 @@ jobs:
         id: my-action
         uses: ./.github/actions/starter-action
         with:
-          who-to-greet: "rashi"
+          who-to-greet: "beebee"
       - name: Echo
         shell: bash
         run: |
