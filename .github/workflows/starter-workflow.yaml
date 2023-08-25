@@ -3,7 +3,8 @@ name: Hello World
 
 # This specifies triggers for the workflow
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened]
 concurrency:
   # This is a fully-formed ref of the branch or tag that triggered the workflow run.
   group: ${{ github.ref }}
