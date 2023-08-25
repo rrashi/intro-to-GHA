@@ -32,11 +32,32 @@ jobs:
         run: |
           echo "Random number generated is ${{ steps.my-action.outputs.random-number }}"
 
-  hello-world:
+  hello-world-plus-cool-variable:
     runs-on: ubuntu-latest
+    outputs:
+      random-number: ${{ steps.random-id.outputs.random-number }}
     steps:
       - uses: actions/checkout@v3
       - name: Harlow
         shell: bash
         run: |
           echo "harlow world <3"
+      - name: Cool cool
+        shell: bash
+        run: |
+          echo "${{ vars.COOL_VARIABLE }}"
+      - name: Generate random number
+        id: random-id
+        shell: bash
+        run: |
+          echo "random-number=${ echo $RANDOM}" >> GITHUB_OUTPUT
+
+  print-random-number:
+    runs-on: ubuntu-latest
+    needs: [hello-world-plus-cool-variable]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Echo random number
+        shell: bash
+        run: |
+          echo "${{ needs.hello-world.outputs.random-number }}""
