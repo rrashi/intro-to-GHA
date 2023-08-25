@@ -40,9 +40,9 @@ jobs:
         with:
           repository: ${{github.repository}}
       - name: Echo
-        shell: bash
-        run: |
-          echo "hello world"
+        uses: ./.github/actions/starter-action
+        with:
+          who-to-greet: "rashi"
       - name: Echos cool variable
         shell: bash
         run: |
