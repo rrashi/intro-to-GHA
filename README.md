@@ -55,7 +55,7 @@ Contexts are a way to access information about workflow runs, variables, runner 
 
 ### Concurrency
 
-Github allows useers to specify a `concurrency` variable that ensures only a single workflow or job is in progress. This is particularly useful in scenarios when we'd want only a single deployment in progress at a time (like for production environments). You can specify the concurrency using the `github` context.
+Github allows useers to specify a `concurrency` variable that ensures only a single workflow or job is in progress. This is particularly useful in scenarios when we'd want only a single deployment in progress at a time (like for production environments). You can specify the concurrency using the `github` context. [5]
 
 [**Jump to top**](#getting-started)
 
@@ -106,7 +106,7 @@ Tasks:
 2. Create a new composite action `hello-world-action` that takes in an input string and echoes 
 3. Replace the code in the workflow's `hello-world` job to call the action instead
 
-### References
+### Resources
 
 [1] Tutorial on YAML: https://learnxinyminutes.com/docs/yaml/
 
@@ -115,3 +115,7 @@ Tasks:
 [3] Resuable workflows vs composite actions: https://dev.to/n3wt0n/composite-actions-vs-reusable-workflows-what-is-the-difference-github-actions-11kd
 
 [4] Contexts https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+
+[5] Concurrency https://docs.github.com/en/actions/using-jobs/using-concurrency
+
+[6] Workflow triggers https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
